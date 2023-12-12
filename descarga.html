@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detector de Dispositivo</title>
+</head>
+<body>
+
+<div id="content"></div>
+
+<script>
+    // Función para detectar si se accede desde un celular o una computadora
+    function detectDevice() {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        return isMobile ? 'mobile' : 'desktop';
+    }
+
+    // Función para mostrar el código QR o el botón de descarga según el dispositivo
+    function displayContent() {
+        const deviceType = detectDevice();
+        const contentDiv = document.getElementById('content');
+
+        if (deviceType === 'desktop') {
+            // Si es una computadora, mostrar el código QR para descargar la app
+            
+            const qrCodeImage = document.createElement('img');
+            qrCodeImage.src = 'chicoPNG.PNG'; // Aquí debes poner la ruta de tu propio código QR
+            contentDiv.appendChild(qrCodeImage);
+        } else {
+            // Si es un dispositivo móvil, mostrar el botón de descarga
+            const downloadButton = document.createElement('button');
+            downloadButton.textContent = 'Descargar App';
+            // Aquí debes agregar el enlace para descargar tu app en el evento 'click' del botón
+            downloadButton.addEventListener('click', function() {
+                // Agrega aquí la lógica para redirigir al enlace de descarga de tu app
+                window.location.href = 'ruta_de_descarga_de_tu_app';
+            });
+            contentDiv.appendChild(downloadButton);
+        }
+    }
+
+    // Llamar a la función para mostrar el contenido apropiado cuando se cargue la página
+    window.onload = displayContent;
+</script>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Arquitectura</title>
+    <!-- Enlace al CDN de Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="script" href="js/script.ts">
+</head>
+
+<body class="bg-dark text-light text-center">
+
+
+    <div class="container mb-5 mt-5">
+
+        <div class="row">
+            <h1>FRONTEND</h1>
+            <div class="col-12">
+                <!-- Botón 1 -->
+                <a href="http://44.194.18.69:8100" target="_blank" class="btn btn-success w-100">
+                    <strong>Descarga aqui!</strong>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Scripts de Bootstrap (jQuery y Popper.js son requeridos para Bootstrap) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+</body>
+</html>
